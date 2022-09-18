@@ -55,6 +55,7 @@ class LoanController extends Controller
                 $loan_data['amount'] = $request_params['amount'];
                 $loan_data['term'] = $request_params['term'];
                 $loan_data['application_date'] = $dt->format("Y-m-d");
+                $loan_data['remain_capital'] = $request_params['amount'];
                 Loan::create($loan_data);
 
                 $return_params['success'] = 'Yes';

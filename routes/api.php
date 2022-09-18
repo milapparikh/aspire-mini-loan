@@ -44,6 +44,8 @@ Route::group(['namespace'=>'App\Http\Controllers\Api'], function(){
 		//This rule for only login user can create loan
 		Route::post('create-loan', 'LoanController@create');
 		Route::get('view-loan', 'LoanController@view');
+		Route::post('pay-repayment', 'RepaymentController@payRepayment');
+
 	});
 
 
