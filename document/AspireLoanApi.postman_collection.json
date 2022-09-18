@@ -1,0 +1,200 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AspireLoanApi",
+		"_postman_id": "198cfaa6-7925-4f95-1758-f1d4d8546851",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserCreate",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/auth/register\n",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "milap parikh",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "milap1@test.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "milap123",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "milap123",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/auth/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "milap1@test.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "milap123",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UserProfile",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/auth/user-profile",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {ACCESS_TOKEN}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LoanCreate",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/create-loan",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {ACCESS_TOKEN}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "amount",
+							"value": "13000",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "term",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LoanApprove",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/approveloan/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {ACCESS_TOKEN}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LoanView",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/view-loan",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {ACCESS_TOKEN}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LoanRepaymentPay",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/pay-repayment",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {ACCESS_TOKEN}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_loan",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "repayment_amount",
+							"value": "4000",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "repayment_date",
+							"value": "2022-09-25",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
